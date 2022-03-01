@@ -3,14 +3,18 @@ body {
     font-family: sans-serif;
 }
 
+.flex-container{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
 /* ***************** header & nav ************* */
 /* Step 1. Style the nav for when it shows, starting with the mobile view, and then hide it */
 header {
     background-color: #fff;
     padding: 1rem;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-between;
+    
 }
 
 .toggle-btn {
@@ -55,18 +59,12 @@ header nav {
     left: 0;
     background-color: rgba(255, 255, 255, 0.9);
     width: 100vw;
+    z-index: 1;
 }
 
 .show-nav {
     /* add CSS here */
     max-height: 18.75rem;
-}
-
-/* ************ section ************ */
-section {
-    padding: 3.125rem;
-    text-align: center;
-    text-transform: uppercase;
 }
 
 /* ***************** section ************ */
@@ -83,8 +81,31 @@ section p {
 section h2 {
     color: #fff;
     font-size: 3.175rem;
+    margin-bottom: 1.5rem;
 }
 
+.gallery{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery > div{
+    position: relative;
+}
+
+span{
+    background-color: #87a6ab;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    /* once we add the span as a position element, now we have to use z-index to name what positioned element goes on top  */
+}
 
 @media screen and (min-width: 625px) {
     .toggle-btn {
@@ -110,5 +131,12 @@ section h2 {
 
     ul.menu a {
         padding: 0 0.75rem;
+    }
+}
+
+@media screen and (min-width: 1100px){
+    .inner-container{
+        width: 1100px;
+        margin: 0 auto;
     }
 }
